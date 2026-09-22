@@ -29,3 +29,13 @@ await this.queue.add('send-email', { to: 'user@x.test' }, { delayMs: 5000 });
 ```
 
 Memory driver included for local development; implement `QueueDriver` for Redis backends.
+
+## Redis driver
+
+Uses Bun's native Redis client — no extra dependency:
+
+```ts
+QueueModule.forRoot({ driver: 'redis', redisUrl: 'redis://localhost:6379', redisPrefix: 'orbit:queue' })
+```
+
+Atomic claims via Lua EVAL so multiple workers never receive the same job. Jobs live in a Redis ZSET scored by `runAt` (delayed jobs supported natively). Memory driver included for local development; implement `QueueDriver` for other backends.
