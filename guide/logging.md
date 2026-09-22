@@ -198,3 +198,17 @@ export class AppService {
 - [Tracing](/guide/tracing) - Distributed tracing with OpenTelemetry
 - [Metrics](/guide/metrics) - Prometheus metrics
 - [@galaxy-stack/orbit-logger](/packages/logger) - API Reference
+
+## Log Buffer + Live Tail (devtools)
+
+Since logger 0.3.0, every `LoggerService` pushes entries into a shared in-memory
+ring buffer (default capacity 5000). The devtools dashboard reads from it:
+
+- `GET /__devtools/api/logs?level=&q=&requestId=&sinceMs=&limit=` — filtered history
+- `GET /__devtools/api/logs/stream` — SSE live tail
+
+Disable per-service with `LoggerModule.forRoot({ buffer: false })`, or supply a
+custom buffer instance. `child()` loggers inherit the parent buffer.
+
+For the React dashboard that consumes these endpoints, see `apps/dashboard`
+(`bun run dev:dashboard`).

@@ -198,3 +198,11 @@ export class AppService {
 - [Truy vết](/vi/guide/tracing) - Truy vết phân tán với OpenTelemetry
 - [Số liệu](/vi/guide/metrics) - Số liệu Prometheus
 - [@galaxy-stack/orbit-logger](/packages/logger) - Tài liệu tham khảo API
+## Log Buffer + Live Tail (devtools)
+
+Từ logger 0.3.0, mọi `LoggerService` đẩy entry vào một ring buffer chung trong bộ nhớ (mặc định 5000 dòng). Devtools đọc từ buffer này:
+
+- `GET /__devtools/api/logs?level=&q=&requestId=&sinceMs=&limit=` — lịch sử có filter
+- `GET /__devtools/api/logs/stream` — SSE live tail
+
+Tắt bằng `LoggerModule.forRoot({ buffer: false })` hoặc truyền buffer instance riêng. `child()` kế thừa buffer của cha. Dashboard tiêu thụ các endpoint này nằm ở `apps/dashboard` (`bun run dev:dashboard`).
