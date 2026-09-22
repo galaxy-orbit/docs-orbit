@@ -117,6 +117,10 @@ export default defineConfig({
         {
           text: 'Advanced',
           items: [
+            { text: 'Event Bus', link: '/packages/event-bus' },
+            { text: 'HTTP Client', link: '/packages/http-client' },
+            { text: 'Queue', link: '/packages/queue' },
+            { text: 'i18n', link: '/packages/i18n' },
             { text: 'Configuration', link: '/guide/configuration' },
             { text: 'Validation', link: '/guide/validation' },
             { text: 'Caching', link: '/guide/caching' },
@@ -211,6 +215,8 @@ export default defineConfig({
           text: 'Utilities',
           items: [
             { text: '@galaxy-stack/orbit-mcp', link: '/packages/mcp' },
+            { text: '@galaxy-stack/orbit-sse', link: '/packages/sse' },
+            { text: '@galaxy-stack/orbit-file-storage', link: '/packages/file-storage' },
             { text: '@galaxy-stack/orbit-schedule', link: '/packages/schedule' },
             { text: '@galaxy-stack/orbit-terminus', link: '/packages/terminus' },
             { text: '@galaxy-stack/orbit-swagger', link: '/packages/swagger' },
@@ -337,6 +343,10 @@ export default defineConfig({
         {
           text: 'Nâng cao',
           items: [
+            { text: 'Event Bus', link: '/vi/packages/event-bus' },
+            { text: 'HTTP Client', link: '/vi/packages/http-client' },
+            { text: 'Queue', link: '/vi/packages/queue' },
+            { text: 'i18n', link: '/vi/packages/i18n' },
             { text: 'Cấu hình', link: '/vi/guide/configuration' },
             { text: 'Xác thực dữ liệu', link: '/vi/guide/validation' },
             { text: 'Bộ nhớ đệm', link: '/vi/guide/caching' },
@@ -431,6 +441,8 @@ export default defineConfig({
           text: 'Tiện ích',
           items: [
             { text: '@galaxy-stack/orbit-mcp', link: '/vi/packages/mcp' },
+            { text: '@galaxy-stack/orbit-sse', link: '/vi/packages/sse' },
+            { text: '@galaxy-stack/orbit-file-storage', link: '/vi/packages/file-storage' },
             { text: '@galaxy-stack/orbit-schedule', link: '/vi/packages/schedule' },
             { text: '@galaxy-stack/orbit-terminus', link: '/vi/packages/terminus' },
             { text: '@galaxy-stack/orbit-swagger', link: '/vi/packages/swagger' },
