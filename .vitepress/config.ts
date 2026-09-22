@@ -210,6 +210,7 @@ export default defineConfig({
         {
           text: 'Utilities',
           items: [
+            { text: '@galaxy-stack/orbit-mcp', link: '/packages/mcp' },
             { text: '@galaxy-stack/orbit-schedule', link: '/packages/schedule' },
             { text: '@galaxy-stack/orbit-terminus', link: '/packages/terminus' },
             { text: '@galaxy-stack/orbit-swagger', link: '/packages/swagger' },
@@ -429,6 +430,7 @@ export default defineConfig({
         {
           text: 'Tiện ích',
           items: [
+            { text: '@galaxy-stack/orbit-mcp', link: '/vi/packages/mcp' },
             { text: '@galaxy-stack/orbit-schedule', link: '/vi/packages/schedule' },
             { text: '@galaxy-stack/orbit-terminus', link: '/vi/packages/terminus' },
             { text: '@galaxy-stack/orbit-swagger', link: '/vi/packages/swagger' },
