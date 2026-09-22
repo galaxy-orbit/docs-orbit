@@ -11,7 +11,7 @@ hero:
       link: /vi/guide/introduction
     - theme: alt
       text: Xem trên GitHub
-      link: https://github.com/orbit/orbit
+      link: https://github.com/galaxy-orbit
 
 features:
   - icon: ⚡

@@ -91,3 +91,36 @@ app.use(RateLimitMiddleware({
   legacyHeaders: false,
 }));
 ```
+
+## Secure Headers tích hợp sẵn (mặc định bật)
+
+Từ core 0.1.11, mọi response của Orbit đều có secure headers dạng helmet **mặc
+định** — không cần import thêm package:
+
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: SAMEORIGIN`
+- `Strict-Transport-Security: max-age=15552000; includeSubDomains`
+- `Referrer-Policy: no-referrer`
+- `Cross-Origin-Opener-Policy: same-origin`
+- `Cross-Origin-Resource-Policy: same-origin`
+- `Origin-Agent-Cluster: ?1`
+- `X-Permitted-Cross-Domain-Policies: none`
+- `X-DNS-Prefetch-Control: off`
+- Xoá `X-Powered-By`
+
+Tắt hoặc tuỳ biến từng header:
+
+```typescript
+const app = await OrbitFactory.create(AppModule, {
+  security: false,                    // tắt toàn bộ headers mặc định
+  // hoặc tuỳ biến:
+  // security: { frameguard: 'DENY', hsts: { maxAge: 31536000, preload: true } },
+});
+```
+
+GraphQL response cũng có headers này mặc định; tắt bằng
+`GraphQLModule.forRoot({ secureHeaders: false })`.
+
+> CSRF, rate limiting, làm sạch HTML và API key vẫn là **opt-in** qua
+> `SecurityModule.forRoot(...)` và `ThrottlerModule` vì chúng thay đổi hành vi
+> request. Hãy bật chúng cho các hệ thống tiếp xúc internet.
