@@ -272,6 +272,7 @@ export default defineConfig({
             { text: 'Giới thiệu', link: '/vi/guide/introduction' },
             { text: 'Bắt đầu nhanh', link: '/vi/guide/quick-start' },
             { text: 'Cấu trúc dự án', link: '/vi/guide/project-structure' },
+            { text: 'Benchmark hiệu năng', link: '/vi/guide/benchmark' },
           ],
         },
         {
@@ -369,6 +370,13 @@ export default defineConfig({
           items: [
             { text: 'Kiểm thử đơn vị', link: '/vi/guide/testing' },
             { text: 'Kiểm thử E2E', link: '/vi/guide/e2e-testing' },
+          ],
+        },
+        {
+          text: 'Công cụ',
+          items: [
+            { text: 'Dashboard Devtools', link: '/vi/guide/dashboard' },
+            { text: 'MCP & Skills cho AI Agents', link: '/vi/guide/ai-agents-mcp' },
           ],
         },
         {
