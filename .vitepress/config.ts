@@ -18,11 +18,13 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.png' }],
   ],
 
   themeConfig: {
-    logo: '/logo.png',
+    // Mark in brand cyan on dark, deeper cyan on light backgrounds (AA contrast on white).
+    logo: { light: '/logo-light.svg', dark: '/logo.svg' },
     
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
